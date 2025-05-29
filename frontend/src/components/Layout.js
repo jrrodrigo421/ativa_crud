@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
 
       <footer className="bg-secondary text-light py-4">
         <div className="container mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} Ativa CRUD. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ativa CRUD. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
