@@ -71,12 +71,12 @@ const Register = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create your account
+            ✅ Crie sua conta ✅
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
+            Ou{' '}
             <Link to="/login" className="font-medium text-primary hover:text-primary-dark">
-              sign in to your existing account
+              Faça login na sua conta existente
             </Link>
           </p>
         </div>
@@ -107,40 +107,40 @@ const Register = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="sr-only">Email address</label>
+              <label htmlFor="email" className="sr-only">Email</label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-light focus:border-primary-light focus:z-10 sm:text-sm"
-                placeholder="Email address"
+                placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">Password</label>
+              <label htmlFor="password" className="sr-only">Senha</label>
               <input
                 id="password"
                 name="password"
                 type="password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-light focus:border-primary-light focus:z-10 sm:text-sm"
-                placeholder="Password"
+                placeholder="Senha"
                 value={formData.password}
                 onChange={handleChange}
               />
             </div>
             <div>
-              <label htmlFor="confirmPassword" className="sr-only">Confirm password</label>
+              <label htmlFor="confirmPassword" className="sr-only">Confirmar senha</label>
               <input
                 id="confirmPassword"
                 name="confirmPassword"
                 type="password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-primary-light focus:border-primary-light focus:z-10 sm:text-sm"
-                placeholder="Confirm password"
+                placeholder="Confirmar senha"
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
@@ -153,7 +153,7 @@ const Register = () => {
               disabled={isLoading}
               className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-light ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              {isLoading ? 'Creating account...' : 'Create account'}
+              {isLoading ? 'Criando conta...' : 'Criar conta'}
             </button>
           </div>
         </form>

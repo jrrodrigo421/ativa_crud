@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
             onClick={handleLogout}
             className="bg-primary-dark hover:bg-red-800 text-light px-4 py-2 rounded transition-colors"
           >
-            Logout
+            Sair
           </button>
         </div>
       </header>

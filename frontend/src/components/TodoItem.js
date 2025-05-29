@@ -21,7 +21,7 @@ const TodoItem = ({ todo, onEdit, onDelete, onToggleComplete }) => {
               </p>
             )}
             <p className="text-xs text-gray-400 mt-2">
-              Created: {new Date(todo.created_at).toLocaleString()}
+              Criado em: {new Date(todo.created_at).toLocaleString()}
             </p>
           </div>
         </div>
@@ -30,13 +30,13 @@ const TodoItem = ({ todo, onEdit, onDelete, onToggleComplete }) => {
             onClick={() => onEdit(todo)}
             className="text-blue-600 hover:text-blue-800 p-1"
           >
-            Edit
+            Editar
           </button>
           <button
             onClick={() => onDelete(todo.id)}
             className="text-red-600 hover:text-red-800 p-1"
           >
-            Delete
+            Remover
           </button>
         </div>
       </div>

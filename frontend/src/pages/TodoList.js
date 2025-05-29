@@ -97,12 +97,12 @@ const TodoList = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">My Tasks</h1>
+        <h1 className="text-2xl font-bold text-gray-800">Minhas Tarefas</h1>
         <button
           onClick={handleAddClick}
           className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
         >
-          Add New Task
+          Adicionar Nova Tarefa
         </button>
       </div>
 
@@ -124,11 +124,11 @@ const TodoList = () => {
 
       {isLoading ? (
         <div className="text-center py-10">
-          <p className="text-gray-600">Loading tasks...</p>
+          <p className="text-gray-600">Carregando tarefas...</p>
         </div>
       ) : todos.length === 0 ? (
         <div className="text-center py-10 bg-gray-50 rounded-lg">
-          <p className="text-gray-500">No tasks found. Add a new task to get started!</p>
+          <p className="text-gray-500">Nenhuma tarefa encontrada. Adicione uma nova tarefa para começar!</p>
         </div>
       ) : (
         <div>
