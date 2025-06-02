@@ -11,16 +11,14 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Set up CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include routers
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
 @app.on_event("startup")

@@ -1,0 +1,17 @@
+app = "ativa-db"
+primary_region = "gru"
+
+[env]
+  PRIMARY_REGION = "gru"
+
+[mounts]
+  source = "pg_data"
+  destination = "/data"
+
+[checks]
+  [checks.pg]
+    port = 5432
+    type = "tcp"
+    interval = "10s"
+    timeout = "2s"
+    grace_period = "5s" 

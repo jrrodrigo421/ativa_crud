@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/v1';
+const API_URL = process.env.REACT_APP_API_URL || 'https://ativa-backend.fly.dev/api/v1';
 
-// Create axios instance with auth header
 const authAxios = (token) => {
   return axios.create({
     baseURL: API_URL,

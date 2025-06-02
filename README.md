@@ -25,6 +25,7 @@ This project is a complete CRUD application for managing tasks with user authent
   - SQLAlchemy
   - PostgreSQL
   - JWT Authentication
+  - Alembic (migrations)
 
 - **Frontend**:
   - React 18
@@ -60,6 +61,84 @@ docker-compose up -d
    - Backend API: http://localhost:8000
    - API Documentation: http://localhost:8000/docs
 
+## Database Migrations
+
+The project uses Alembic for database migrations. Migrations are automatically run during deployment.
+
+### Creating new migrations
+
+If you make changes to the database models, you need to create a new migration:
+
+```bash
+cd backend
+alembic revision --autogenerate -m "Description of changes"
+```
+
+### Running migrations manually
+
+To apply migrations manually:
+
+```bash
+cd backend
+alembic upgrade head
+```
+
+## Deployment
+
+This project is configured for deployment on Fly.io (backend) and Vercel (frontend).
+
+### Prerequisites for Deployment
+
+- [Fly.io CLI](https://fly.io/docs/hands-on/install-flyctl/) installed and authenticated
+- [Vercel CLI](https://vercel.com/cli) installed and authenticated
+
+### One-Click Deployment
+
+Use our unified deployment script to deploy both backend and frontend:
+
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+This script will:
+1. Deploy the database to Fly.io
+2. Deploy the backend to Fly.io
+3. Deploy the frontend to Vercel
+4. Configure the necessary environment variables
+
+### Manual Deployment
+
+#### Backend (Fly.io)
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Deploy to Fly.io:
+   ```bash
+   fly launch --name ativa-backend
+   fly deploy
+   ```
+
+#### Frontend (Vercel)
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Set the API URL environment variable:
+   ```bash
+   vercel env add REACT_APP_API_URL https://your-backend-url.fly.dev/api/v1
+   ```
+
+3. Deploy to Vercel:
+   ```bash
+   vercel --prod
+   ```
+
 ## Project Structure
 
 ```
@@ -71,6 +150,7 @@ ativa_crud/
 │   │   ├── db/         # Database setup
 │   │   ├── models/     # SQLAlchemy models
 │   │   └── schemas/    # Pydantic schemas
+│   ├── migrations/     # Alembic migrations
 │   ├── Dockerfile      # Backend Docker configuration
 │   └── requirements.txt # Python dependencies
 ├── frontend/           # React frontend

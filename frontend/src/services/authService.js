@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/v1';
+const API_URL = process.env.REACT_APP_API_URL || 'https://ativa-backend.fly.dev/api/v1';
 
 export const login = async ({ username, password }) => {
   const formData = new FormData();
